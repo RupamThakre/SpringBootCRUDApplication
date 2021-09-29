@@ -4,8 +4,10 @@ SpringBoot,JPA,Mysql
 Technologies Used
 1. SpringBoot
 2. JPA
-3. MySql Database
+3. MySql Database 
+
 4.Junit
+
 5.Swagger
 
 Description : REST API creation using java8,SpringBoot,JPA,MYSQl Database
@@ -88,10 +90,16 @@ Perform testing using Junit @ Mockito
 Here we are testing out "getEmployeeById" RestApi by creating a test class "EmployeeControllerTest.java"
 Code is looking like that:
 ![A1_Junit_Testing_Code png](https://user-images.githubusercontent.com/55799798/135252104-4e4f0236-5701-4aee-9f04-89c6933b20e9.png)
+
 [Output]
 ![A2_Console](https://user-images.githubusercontent.com/55799798/135252233-de853f81-f72e-48b5-b954-fe9cb6238cfb.JPG)
+
 [Junit Testing Result]
 ![A3_Junit_Face](https://user-images.githubusercontent.com/55799798/135252310-98bd865a-4a55-40f7-b6fe-0fa444af0c35.JPG)
+
+=================
+Swagger
+=================
 
 
 
