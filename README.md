@@ -100,6 +100,17 @@ Code is looking like that:
 =================
 Swagger
 =================
+Now let's implement Swagger and see all RestApi's information through an UI
+1.[Add dependencies]
+![D1_dep1](https://user-images.githubusercontent.com/55799798/135465963-b8003123-a3c4-410c-a187-4b05d0190cdb.JPG)
+
+2[Add Configuration File]
+![D2_dep](https://user-images.githubusercontent.com/55799798/135466059-bae457cd-6828-429c-814b-b57278e7ba6f.JPG)
+
+3[Swagger UI]
+![D3](https://user-images.githubusercontent.com/55799798/135466204-1d9f32c7-b364-4578-88e4-aba6139616de.JPG)
+
+
 
 
 
