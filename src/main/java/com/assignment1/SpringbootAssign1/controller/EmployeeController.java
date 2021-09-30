@@ -16,7 +16,13 @@ import com.assignment1.SpringbootAssign1.entity.Employee;
 import com.assignment1.SpringbootAssign1.service.EmployeeService;
 
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 
+
+@Api(value = "EmployeeController", description = "REST Apis related to Employee Entity!!!!")
 @RestController
 @RequestMapping("/api")
 public class EmployeeController {
@@ -30,14 +36,20 @@ public class EmployeeController {
 		employeeService = theEmployeeService;
 	}
 	
-	// expose "/employees" and return list of employees
+	@ApiOperation(value = "Get list of Employee in the System ", response = Iterable.class, tags = "employees")
+	@ApiResponses(value = { 
+			@ApiResponse(code = 200, message = "Suceess|OK"),
+			@ApiResponse(code = 401, message = "not authorized!"), 
+			@ApiResponse(code = 403, message = "forbidden!!!"),
+			@ApiResponse(code = 404, message = "not found!!!") })
+
 		@GetMapping("/employees")
 		public List<Employee> getAllEmployees() {
 			return employeeService.getAllEmployees();
 		}
 
 		// add mapping for GET /employees/{employeeId}
-		
+	    @ApiOperation(value = "Get specific Employee in the System ", response = Employee.class, tags = "employees")
 		@GetMapping("/employees/{employeeId}")
 		public Employee getEmployee(@PathVariable int employeeId) {
 			
@@ -52,6 +64,7 @@ public class EmployeeController {
 		
 		// add mapping for POST /employees - add new employee
 		
+	    @ApiOperation(value = "add new Employee in the System ", response = Employee.class, tags = "employees")
 		@PostMapping("/employees")
 		public Employee addEmployee(@RequestBody Employee theEmployee) {
 			
@@ -66,7 +79,7 @@ public class EmployeeController {
 		}
 		
 		// add mapping for PUT /employees - update existing employee
-		
+	    @ApiOperation(value = "put Employee in the System ", response = Employee.class, tags = "employees")
 		@PutMapping("/employees")
 		public Employee updateEmployee(@RequestBody Employee theEmployee) {
 			
@@ -76,7 +89,7 @@ public class EmployeeController {
 		}
 		
 		// add mapping for DELETE /employees/{employeeId} - delete employee
-		
+	    @ApiOperation(value = "delete specific Employee in the System ", response = Employee.class, tags = "employees")
 		@DeleteMapping("/employees/{employeeId}")
 		public String deleteEmployee(@PathVariable int employeeId) {
 			

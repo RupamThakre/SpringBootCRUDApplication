@@ -8,23 +8,30 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import io.swagger.annotations.ApiModelProperty;
+
+
+
 @Entity
 @Table(name="employee")
 public class Employee {
 
 	// define fields
-	
+	@ApiModelProperty(notes = "Id of Employee",name="id",required=true,value="test id")
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
 	private int id;
 	
+	@ApiModelProperty(notes = "FirstName of Employee",name="firstname",required=true,value="firstname")
 	@Column(name="first_name")
 	private String firstName;
 	
+	@ApiModelProperty(notes = "LastName of Employee",name="lastname",required=true,value="lastname")
 	@Column(name="last_name")
 	private String lastName;
 	
+	@ApiModelProperty(notes = "Email of Employee",name="email",required=true,value="email")
 	@Column(name="email")
 	private String email;
 	
